@@ -4,11 +4,11 @@ This script streamlines the process of installing the Go programming language on
 
 ### Features
 
-- Downloads the latest stable Go version by default (configurable).
-- Allows overriding the default version with a command-line argument.
-- Provides informative messages during the installation process.
-- Sets up environment variables to enable Go usage from your terminal.
-- Verifies the successful installation.
+- Downloads the latest stable Go version by default (configurable)
+- Allows overriding the default version with a command-line argument
+- Provides informative messages during the installation process
+- Sets up environment variables in .profile and creates Go workspace
+- Verifies the successful installation
 
 ### Usage
 
@@ -31,3 +31,5 @@ or specify a previous 1.22.x version like so:
 ```bash
 bash ./installgo.sh 1.22.8
 ```
+
+**Note:** After installation, you'll need to either log out and log back in, or run `source ~/.profile` to apply the environment changes

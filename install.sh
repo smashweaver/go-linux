@@ -26,12 +26,20 @@ fi
 echo "Extracting Go installer..."
 sudo tar -C "$INSTALL_DIR" -xzf "$INSTALL_DIR/go-installer.tar.gz"
 
-# Set environment variables
-if [[ ! "$PATH" =~ "/usr/local/go/bin" ]]; then
-    echo 'export PATH="$PATH:/usr/local/go/bin"' >> ~/.bashrc
-    source ~/.bashrc
+# Set environment variables in .profile if they don't exist
+if ! grep -q "GOPATH=" ~/.profile; then
+    echo -e "\n# Go environment variables" >> ~/.profile
+    echo 'export GOPATH=$HOME/go' >> ~/.profile
+    echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 fi
+
+# Create GOPATH directory if it doesn't exist
+mkdir -p "$HOME/go"
+
+# Clean up the installer
+sudo rm "$INSTALL_DIR/go-installer.tar.gz"
 
 # Verify the installation
 echo "Go version ${GO_VERSION} installed successfully!"
+echo "Please log out and log back in, or run 'source ~/.profile' to apply the changes."
 go version
