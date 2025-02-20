@@ -20,7 +20,7 @@ curl https://raw.githubusercontent.com/smashweaver/go-linux/main/install.sh > in
 
 **2. Execute the script**
 
-Install the latest stable version: _1.23.2_
+Install the latest stable version: _1.23.6_
 
 ```bash
 bash ./installgo.sh
@@ -29,7 +29,7 @@ bash ./installgo.sh
 or specify a previous 1.22.x version like so:
 
 ```bash
-bash ./installgo.sh 1.22.8
+bash ./installgo.sh 1.22.12
 ```
 
 **Note:** After installation, you'll need to either log out and log back in, or run `source ~/.profile` to apply the environment changes

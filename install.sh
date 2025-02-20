@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Default Go version
-DEFAULT_VERSION="1.23.2"
+DEFAULT_VERSION="1.23.6"
 
 # Allow overriding with command-line argument
 GO_VERSION=${1:-$DEFAULT_VERSION}
